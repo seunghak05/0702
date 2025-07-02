@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class bullet : MonoBehaviour
 {
@@ -16,13 +17,19 @@ public class bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
+                    Debug.Log("Player hit by bullet");
+
+        if (other.tag == "Player")
         {
-            playercontroller playercontroller = other.GetComponent<playercontroller>(); 
-            if (playercontroller != null) {
+            Debug.Log("Player hit by bullet1");
+            playercontroller playercontroller = other.GetComponent<playercontroller>();
+            if (playercontroller != null)
+            {
                 playercontroller.die();
+            }
+
         }
-        }
+        
     }
 
     // Update is called once per frame
