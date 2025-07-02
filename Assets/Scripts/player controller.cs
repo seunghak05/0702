@@ -1,3 +1,4 @@
+using UnityEditor.Build.Content;    
 using UnityEngine;
 
 
@@ -27,26 +28,13 @@ public class playercontroller : MonoBehaviour
         playerRigidbody.linearVelocity = newVelocity;
 
 
-        if (Input.GetKey(KeyCode.UpArrow) == true)
-        {
-            playerRigidbody.AddForce(0f, 0f, speed);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) == true)
-        {
-            playerRigidbody.AddForce(0f, 0f, -speed);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) == true)
-        {
-            playerRigidbody.AddForce(speed, 0f, 0f);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) == true)
-        {
-            playerRigidbody.AddForce(-speed, 0f, 0f);
-        }
+      
     }
 
     public void die()
     {
         gameObject.SetActive(false);
+        // GameManager gameManager = FindObjectOfType<GameManager>();
+        // gameManager.Endgame();
     }
 }
