@@ -1,6 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+
 
 public class playercontroller : MonoBehaviour
 {
@@ -10,19 +9,31 @@ public class playercontroller : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow)==true)
+        float xInput = Input.GetAxis("Horizontal");
+        Debug.Log("xInput: " + xInput);
+        float zInput = Input.GetAxis("Vertical");
+        Debug.Log("yInput: " + zInput);
+
+        float xspeed = xInput * speed;
+        float zspeed = zInput * speed;
+
+        Vector3 newVelocity = new Vector3(xspeed, 0f, zspeed);
+        playerRigidbody.linearVelocity = newVelocity;
+
+
+        if (Input.GetKey(KeyCode.UpArrow) == true)
         {
-            playerRigidbody.AddForce(0f,0f, speed);
+            playerRigidbody.AddForce(0f, 0f, speed);
         }
-        else if (Input.GetKey(KeyCode.DownArrow)== true)
+        else if (Input.GetKey(KeyCode.DownArrow) == true)
         {
-            playerRigidbody.AddForce(0f,0f, -speed);
+            playerRigidbody.AddForce(0f, 0f, -speed);
         }
         else if (Input.GetKey(KeyCode.RightArrow) == true)
         {
@@ -32,5 +43,10 @@ public class playercontroller : MonoBehaviour
         {
             playerRigidbody.AddForce(-speed, 0f, 0f);
         }
+    }
+
+    public void die()
+    {
+        gameObject.SetActive(false);
     }
 }
