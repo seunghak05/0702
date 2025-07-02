@@ -28,7 +28,7 @@ public class Bulletspawner : MonoBehaviour
 
         if (timeAfterSpawn >= spawnrate)
         {
-            spawnSound.PlayOneShot(spawnClip); // Play the spawn sound
+            // spawnSound.PlayOneShot(spawnClip); // Play the spawn sound
             timeAfterSpawn = 0f;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.transform.LookAt(target); // Make the bullet face the player

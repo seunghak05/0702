@@ -580,6 +580,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7625832291051819807, guid: b0c47b5160d77a84685395ce46cc1dcb, type: 3}
   spawnRatemin: 0.5
   spawnRatemax: 3
+  spawnClip: {fileID: 8300000, guid: 0212c9ea1167ff74da234c3e71c22570, type: 3}
 --- !u!82 &134325942
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2417,6 +2418,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7625832291051819807, guid: b0c47b5160d77a84685395ce46cc1dcb, type: 3}
   spawnRatemin: 0.5
   spawnRatemax: 3
+  spawnClip: {fileID: 8300000, guid: 0212c9ea1167ff74da234c3e71c22570, type: 3}
 --- !u!82 &1450693053
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2641,6 +2643,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7625832291051819807, guid: b0c47b5160d77a84685395ce46cc1dcb, type: 3}
   spawnRatemin: 0.5
   spawnRatemax: 3
+  spawnClip: {fileID: 8300000, guid: 0212c9ea1167ff74da234c3e71c22570, type: 3}
 --- !u!82 &1454455077
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3054,6 +3057,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7625832291051819807, guid: b0c47b5160d77a84685395ce46cc1dcb, type: 3}
   spawnRatemin: 0.5
   spawnRatemax: 3
+  spawnClip: {fileID: 8300000, guid: 0212c9ea1167ff74da234c3e71c22570, type: 3}
 --- !u!82 &1550056293
 AudioSource:
   m_ObjectHideFlags: 0
