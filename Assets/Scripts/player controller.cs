@@ -31,15 +31,15 @@ public class playercontroller : MonoBehaviour
         {
             playerRigidbody.AddForce(0f, 0f, speed);
         }
-        else if (Input.GetKey(KeyCode.DownArrow) == true)
+        if (Input.GetKey(KeyCode.DownArrow) == true)
         {
             playerRigidbody.AddForce(0f, 0f, -speed);
         }
-        else if (Input.GetKey(KeyCode.RightArrow) == true)
+        if (Input.GetKey(KeyCode.RightArrow) == true)
         {
             playerRigidbody.AddForce(speed, 0f, 0f);
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) == true)
+        if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
             playerRigidbody.AddForce(-speed, 0f, 0f);
         }
