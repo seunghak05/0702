@@ -18,7 +18,16 @@ public class Bulletspawner : MonoBehaviour
     {
         timeAfterSpawn = 0f;
         spawnrate = Random.Range(spawnRatemin, spawnRatemax);
-        target = FindFirstObjectByType<playercontroller>().transform; // Find the player controller in the scene
+        var player = FindFirstObjectByType<playercontroller>();
+        if (player != null)
+        {
+            target = player.transform;
+        }
+        else
+        {
+            Debug.LogWarning("playercontroller 오브젝트를 찾을 수 없습니다.");
+            target = null;
+        }
     }
 
     // Update is called once per frame
@@ -28,6 +37,11 @@ public class Bulletspawner : MonoBehaviour
 
         if (timeAfterSpawn >= spawnrate)
         {
+            if (target == null)
+            {
+                Debug.LogWarning("target이 null입니다. 총알을 생성하지 않습니다.");
+                return;
+            }
             // spawnSound.PlayOneShot(spawnClip); // Play the spawn sound
             timeAfterSpawn = 0f;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);

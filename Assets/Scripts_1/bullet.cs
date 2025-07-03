@@ -6,15 +6,14 @@ public class bullet : MonoBehaviour
     public Rigidbody bulletRigidbody;
     public float speed = 8f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+     void Start()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
-        // Set the bullet's velocity
+        // ✅ 수정: linearVelocity → velocity
         bulletRigidbody.linearVelocity = transform.forward * speed;
-        
-        Destroy(gameObject, 3f); // Destroy the bullet after 2 seconds
-    }
 
+        Destroy(gameObject, 3f); // 3초 후 자동 제거
+    }
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Player hit by bullet");
@@ -27,17 +26,13 @@ public class bullet : MonoBehaviour
             {
                 playercontroller.die();
             }
-
         }
-         else if (other.tag == "Wall") // ✅ 벽 태그 추가 감지
+        // 벽에 닿으면 총알 제거
+        if (other.tag == "Wall")
         {
-            Destroy(gameObject); // 벽에 맞으면 총알 제거
+            Destroy(gameObject);
         }
-        
-        
     }
-    
-
 
     // Update is called once per frame
     void Update()
