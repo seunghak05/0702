@@ -17,7 +17,7 @@ public class bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-                    Debug.Log("Player hit by bullet");
+        Debug.Log("Player hit by bullet");
 
         if (other.tag == "Player")
         {
@@ -29,8 +29,15 @@ public class bullet : MonoBehaviour
             }
 
         }
+         else if (other.tag == "Wall") // ✅ 벽 태그 추가 감지
+        {
+            Destroy(gameObject); // 벽에 맞으면 총알 제거
+        }
+        
         
     }
+    
+
 
     // Update is called once per frame
     void Update()
